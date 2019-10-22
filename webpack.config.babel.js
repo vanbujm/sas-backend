@@ -1,5 +1,4 @@
 import path from 'path';
-import ZipPlugin from 'zip-webpack-plugin';
 
 export default {
   target: 'node',
@@ -25,7 +24,6 @@ export default {
       }
     ]
   },
-  plugins: [new ZipPlugin()],
   resolve: {
     extensions: ['.js', '.ts']
   }

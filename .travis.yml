@@ -5,12 +5,15 @@ jobs:
   include:
   - stage: build
     script: yarn build
+before_deploy:
+  - mkdir deploy
+  - zip -r deploy/app.zip dist
 deploy:
   provider: s3
   access_key_id: AKIARRT74VEDFMGTFYSA
   bucket: vanbujm-sas-deploy-bucket
   skip_cleanup: true
-  local_dir: dist
+  local_dir: deploy
   on:
     repo: vanbujm/sas-backend
   secret_access_key:
