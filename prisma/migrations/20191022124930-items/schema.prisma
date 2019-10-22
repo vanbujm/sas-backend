@@ -1,0 +1,26 @@
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://admin:admin@localhost:5432/postgres?schema=sas"
+}
+
+generator photon {
+  provider = "photonjs"
+}
+
+enum Category {
+  VEHICLES
+  FUEL
+  FIREARMS
+  AMMUNITION
+  BODY_ARMOUR
+  RATIONS
+  COMMUNICATIONS
+}
+
+model Item {
+  id String @default(cuid()) @id
+  name String @unique
+  description String
+  category Category
+  count Int
+}
