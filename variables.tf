@@ -3,5 +3,5 @@ variable "region" {
 }
 
 variable "bucket_name" {
-  default = "vanbujm-sas-deploy"
+  default = "vanbujm-sas-deploy-bucket"
 }
