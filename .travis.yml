@@ -3,15 +3,15 @@ node_js: '12'
 cache: yarn
 jobs:
   include:
-    - stage: build
-      script: yarn build
+  - stage: build
+    script: yarn build
 deploy:
   provider: s3
   access_key_id: AKIARRT74VEDFMGTFYSA
-  secret_access_key:
-    secure: rkq0BZIGpLNTxvRMRfB1zyqB+au4Nkj3rYkasP4ecoRH2JU9tmGMAFs3vDh+S6H2/hnBULqiROxI71nLyZVJwArDnvs2SHsA/M4u5J2qOnnvue0iVFm4o9rndmf0FKIT0b2kRFhNBySj08LFLSrO1EdBaYpQiHbM/hNlN4kLDq8lK/rxQLc1J/MMWdjbFD/GFX6y6q8xEzuqxQlxyGtDCK5uqamwHLMELW/vmw44Q+5yvuZ6ZAsbAzz2A4Qjv4wd6hmfiqHhXxUUcB2FfchyLhAjhjHQZD7KFK0YvXBTq8bAg+yglcPw+23vI5jEQ+EYtxKbL+ipuZ+UvfeVv5SErkq6gDUnHl2EWwJMtBw6n2IeXOsfmmkyE14+G0GGnriYuUkaOmiYcl+Q4FFbVKkx6pYJinBa3kWfcdQ1Hvi0zP68aH1jUhgWxNtNF9WLNWyub1E5f/mPBHMRxriZcKhWftlVn1fXiM0KNoYtRQ2PXP/hy/atvxml6gS2aCz2WY2GVKrCxRNtzUkrX1fxErDlA+KqU8sC0e265yAp3KaZHIvVaQ4QtJEoaJALGOtYFA1IQouf7Q2k8Y8AZz6MkykqcBX6UPnJw1bzoyNxHK04kkytU0nlgRAcBlKoHxadmyipL8Pff9cpUUeMK18tgKrDPswfL3FcoEaYZ+Sq3wYws/o=
   bucket: vanbujm-sas-deploy
   skip_cleanup: true
   local_dir: dist
   on:
     repo: vanbujm/sas-backend
+  secret_access_key:
+    secure: YtEre4IxR75JMpXLhSCa1Fxx59wO25wrryf/oUd3oa/1S3e9hle8yXzT7vqMXCgTkSmSYAmuR96lZaFdTpUeJS+rhdrpDl4uherupR5mHp/QYZJoj8ioULkJDvINWvbC0bQM8TG2p/jhdm3p6ubDNG99EREevhzj8QQLouoq6XJWZGP1ypkAFx2TvxPOUgvqUXOULfC64QDiqx5L/xIxIlfWliteuI0tMaBeEdUdBYw6k2o5s7YJE5zmqFV73+l9lry9TpJxO7FjJV3B1Y4r4GSkBlUPoeDsaKUB7y8pdWY2KWeDOc8+FCqrcLepbeDEK6rqNsxjPMx9coC0loaGmf1/AgBU7ZiDlgQSikB0YxWK5WkQKf2c8678Ej+94ACUjF8Gv7wYiLhEo+7+sliU2V4cLNx21EWEZfYq7OYDpqF4YjRNI4ILtNq+JTbs+82J4fz7iXraM9XVdsanIwdXFL2q2lrakeaGrN9Dk+yob3bAJqjabrUOsHA8toWcXh+IDKQOd4xb9ShkTQiUrr/Ca0qo7/0u0JGVu26EmoE/oyVyieww9fyFZaX+hY4FlyhxcLLX+YIa/EQbSQRxfjF3zILqouEZG1dAHMPXM7WKt8qLgqJYdHfLXj6CSbakg72QeLI/FL5Hfy2HvvoxLkftO1js9gDDM0lWYIS+vT3KlWw=

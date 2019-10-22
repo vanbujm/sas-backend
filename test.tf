@@ -3,7 +3,7 @@ provider "aws" {
   region = var.region
 }
 
-data "aws_iam_policy_document" "aws-terraform-bucket-policy-document" {
+data "aws_iam_policy_document" "vanbujm-sas-deploy-bucket-policy-document" {
   statement {
     sid = "1"
 
@@ -17,15 +17,15 @@ data "aws_iam_policy_document" "aws-terraform-bucket-policy-document" {
   }
 }
 
-resource "aws_iam_policy" "aws-terraform-bucket-policy" {
-  name   = "aws-terraform-bucket-policy"
+resource "aws_iam_policy" "vanbujm-sas-deploy-bucket-policy" {
+  name   = "${var.bucket_name}-bucket-policy"
   path   = "/"
-  policy = data.aws_iam_policy_document.aws-terraform-bucket-policy-document.json
+  policy = data.aws_iam_policy_document.vanbujm-sas-deploy-bucket-policy-document.json
 }
 
 
-resource "aws_s3_bucket" "aws-terraform-bucket" {
+resource "aws_s3_bucket" "vanbujm-sas-deploy-bucket" {
   bucket = var.bucket_name
   acl = "public-read"
-  policy = data.aws_iam_policy_document.aws-terraform-bucket-policy-document.json
+  policy = data.aws_iam_policy_document.vanbujm-sas-deploy-bucket-policy-document.json
 }
